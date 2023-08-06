@@ -1,0 +1,41 @@
+{% extends 'todo/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="container">
+        <div class="align-items-center">
+            <h1 class="text-center mt-4">Your Completed Todos:</h1>
+
+            {% for todo in todos %}
+            <div class="card border-success bg-light text-center mt-3 mx-auto">
+
+                <div class=" border-success card-header justify-content-center">
+                    <h5 class="text-success">
+                        {% if todo.important %} <b> {% endif %} {{ todo.title }}
+                            {% if todo.important %} </b> {%endif %}
+                    </h5>
+                </div>
+
+                <div class=" justify-content-center card-body">
+                    <p class="card-text">{% if todo.memo %} - {{ todo.memo|truncatechars:30 }} {% endif %}</p>
+                </div>
+                <footer class="blockquote-footer"> completed on: {{ todo.datecompleted|date:'M j Y H:i' }} </footer>
+
+
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% endblock %}
+</body>
+
+</html>

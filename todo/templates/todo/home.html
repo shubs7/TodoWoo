@@ -1,0 +1,50 @@
+{% extends 'todo/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block css %}
+    <link rel="stylesheet" href="home.css">
+    {% endblock %}
+
+    {% block title %} TodoWoo {% endblock %}
+</head>
+
+<body>
+    {% load static %}
+
+    {% block content %}
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-sm-8 col-md-6">
+
+                <img src="{% static 'todo/Todo-home.jpg' %}" alt="todo image" class="img-fluid">
+
+            </div>
+
+            <div class="col-sm-4 col-md-6 text-justify">
+                <h2 class="display-2 text-center">TodoWoo</h2>
+                <p class="lead">Your personalized task manager. Create, update, and delete tasks, or mark them as
+                    completed.
+                    Stay organized and productive with ease!</p>
+                {% if user.is_authenticated %}
+                <div class="text-center">
+                    <a class="btn btn-primary " href="{% url 'createtodo' %}" role="button">Create Todo</a>
+                </div>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+
+    {% endblock %}
+
+</body>
+
+</html>
