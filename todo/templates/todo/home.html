@@ -26,11 +26,21 @@
 
             </div>
 
-            <div class="col-sm-4 col-md-6 text-justify">
+            <div class="col-sm-4 col-md-6 text-justify mt-4">
                 <h2 class="display-2 text-center">TodoWoo</h2>
-                <p class="lead">Your personalized task manager. Create, update, and delete tasks, or mark them as
+                <p class="lead">Your go-to task management solution. After logging in or signing up, effortlessly craft
+                    todos with titles, detailed descriptions, and importance markers.</p>
+                <p class="lead"> When you explore the "Current"
+                    page, vital tasks stand out in striking red, ensuring your focus is on point. Need to make changes?
+                    Feel free to modify, delete, or mark tasks as complete – all with remarkable ease.</p>
+
+                <p class="lead"> What's more, the convenience doesn't end there. TodoWoo ensures you're always in
+                    control, allowing
+                    you to seamlessly access your tasks from any device. Say goodbye to scattered to-dos and welcome a
+                    streamlined, user-centric approach to task management with TodoWoo.</p>
+                <!-- <p class="lead">Your personalized task manager. Create, update, and delete tasks, or mark them as
                     completed.
-                    Stay organized and productive with ease!</p>
+                    Stay organized and productive with ease!</p> -->
                 {% if user.is_authenticated %}
                 <div class="text-center">
                     <a class="btn btn-primary " href="{% url 'createtodo' %}" role="button">Create Todo</a>
